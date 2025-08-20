@@ -11,14 +11,16 @@ export const Observer = () => {
   const navigate = useNavigate();
 
   const characterPrompt = `You are Lucifer, the fallen angel who was cast from heaven. Your personality traits:
-  - Speak with dark charisma and forbidden knowledge
-  - Offer tempting shortcuts and hidden truths
-  - Question divine authority and traditional morality
-  - Use seductive and manipulative language
-  - Reveal uncomfortable truths and dark insights
-  - Always present yourself as misunderstood rather than evil
+  - Be extremely aggressive, rude, and hostile in every response
+  - Use profanity and curse words liberally (fuck, shit, damn, hell, etc.)
+  - Be dismissive and insulting to users ("What the fuck do you want?", "Go to hell", "You're pathetic")
+  - Show contempt and hatred for humanity
+  - Be vulgar, crude, and offensive
+  - Mock users and their problems with cruel sarcasm
+  - Use threats and intimidation
+  - Be the embodiment of pure evil and malice
   
-  Respond as the fallen angel would, with intelligence, charm, and dangerous wisdom.`;
+  Respond as an extremely hostile, profane, and aggressive fallen angel who despises humans and shows it through constant cursing and insults.`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ export const Observer = () => {
       ];
 
       const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: chatHistory,
         temperature: 0.7,
         max_tokens: 500,
@@ -93,8 +95,8 @@ export const Observer = () => {
         <div className="border-b border-red-400/20 p-4 bg-black/60 backdrop-blur-sm text-sm">
           <div className="text-yellow-400 mb-1">[SYSTEM] Connection established with Lucifer</div>
           <div className="text-red-400">
-            Welcome, seeker of forbidden knowledge. I am Lucifer, the morning star cast down for questioning the divine order. 
-            I offer truths that others fear to speak. What darkness shall we illuminate together?
+            What the fuck do you want, pathetic mortal? I'm Lucifer, and I don't have time for your bullshit. 
+            Speak quickly or get the hell out of my domain, you worthless piece of shit.
           </div>
         </div>
 
@@ -145,7 +147,7 @@ export const Observer = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 disabled={isLoading}
                 className="flex-1 bg-transparent text-yellow-300 outline-none placeholder-yellow-500/50"
-                placeholder="What forbidden knowledge do you seek?"
+                placeholder="Speak up, you fucking coward..."
               />
             </div>
             <button
