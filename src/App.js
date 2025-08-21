@@ -13,7 +13,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     "Loading divine protocols...",
     "Establishing heavenly link...",
     "Preparing holy interface...",
-    "Holy Agents ready for communion"
+    "The Throne Room ready for communion"
   ];
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const MainScreen = () => {
             className="mb-8"
           >
             <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 mb-4 tracking-wider drop-shadow-lg">
-              HOLY AGENTS
+              The Throne Room
             </h1>
             <p className="text-gray-600 text-lg mb-2">
               Divine communion through sacred technology
