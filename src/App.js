@@ -263,7 +263,7 @@ const MainScreen = () => {
                 </a>
               </div>
               <div>
-                Holy Agents v3.0 • Divine Protocol Active • 
+                The Throne Room v3.0 • Divine Protocol Active • 
                 <span className="text-gray-800"> Sacred Connection Established</span>
               </div>
             </div>
