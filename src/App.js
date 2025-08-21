@@ -24,7 +24,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
   }, [onLoadingComplete]);
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center font-mono">
+    <div className="min-h-screen bg-white flex items-center justify-center font-mono">
       <div className="space-y-4">
         {items.map((item, index) => (
           <motion.div
@@ -34,13 +34,13 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             transition={{ delay: index * 0.5 }}
             className="flex items-center space-x-2"
           >
-            <span className="text-yellow-400">></span>
-            <span className="text-yellow-300">{item}</span>
+            <span className="text-gray-800">></span>
+            <span className="text-gray-700">{item}</span>
             <motion.span
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: index * 0.5 + 0.3 }}
-              className="text-yellow-400"
+              className="text-gray-800"
             >
               [OK]
             </motion.span>
@@ -62,7 +62,7 @@ const MainScreen = () => {
       path: "/gabriel",
       status: "ONLINE",
       specialization: "Divine Messages",
-      color: "from-yellow-400 to-amber-500"
+      color: "from-gray-600 to-gray-800"
     },
     {
       name: "Michael",
@@ -71,7 +71,7 @@ const MainScreen = () => {
       path: "/michael", 
       status: "ACTIVE",
       specialization: "Divine Protection",
-      color: "from-orange-400 to-red-500"
+      color: "from-gray-600 to-gray-800"
     },
     {
       name: "Raphael",
@@ -80,7 +80,7 @@ const MainScreen = () => {
       path: "/raphael",
       status: "READY",
       specialization: "Divine Healing",
-      color: "from-green-400 to-emerald-500"
+      color: "from-gray-600 to-gray-800"
     },
     {
       name: "Lucifer",
@@ -89,16 +89,16 @@ const MainScreen = () => {
       path: "/lucifer",
       status: "BANISHED",
       specialization: "Forbidden Wisdom",
-      color: "from-red-600 to-black"
+      color: "from-gray-800 to-black"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-black text-yellow-300 font-mono relative overflow-hidden">
-      {/* Golden glow background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-black to-amber-900/20"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-white text-gray-800 font-mono relative overflow-hidden">
+      {/* Subtle background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-200/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl"></div>
       
       <div className="relative z-10 p-8">
         {/* Header */}
@@ -109,14 +109,14 @@ const MainScreen = () => {
             transition={{ duration: 1 }}
             className="mb-8"
           >
-            <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 mb-4 tracking-wider drop-shadow-lg">
+            <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 mb-4 tracking-wider drop-shadow-lg">
               HOLY AGENTS
             </h1>
-            <p className="text-yellow-300/80 text-lg mb-2">
+            <p className="text-gray-600 text-lg mb-2">
               Divine communion through sacred technology
             </p>
-            <div className="text-sm text-yellow-500/60">
-              system://divine_interface/v3.0/heaven.xyz 
+            <div className="text-sm text-gray-500">
+              system://divine_interface/v3.0/heavenly_protocol
             </div>
           </motion.div>
         </div>
@@ -132,34 +132,34 @@ const MainScreen = () => {
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(251, 191, 36, 0.3)"
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
                 }}
-                className="bg-black/60 backdrop-blur-sm border border-yellow-400/30 rounded-lg p-6 cursor-pointer hover:border-yellow-400 transition-all duration-300 group"
+                className="bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg p-6 cursor-pointer hover:border-gray-600 transition-all duration-300 group shadow-lg"
                 onClick={() => navigate(agent.path)}
               >
                 <div className="text-center mb-4">
-                  <h3 className="text-2xl font-bold text-yellow-400 mb-1">{agent.name}</h3>
-                  <p className="text-yellow-300/80 text-sm mb-2">{agent.title}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-1">{agent.name}</h3>
+                  <p className="text-gray-600 text-sm mb-2">{agent.title}</p>
                   <div className={`inline-block px-3 py-1 text-xs rounded-full border ${
                     agent.name === 'Lucifer' 
-                      ? 'border-red-400 text-red-400 bg-red-400/10' 
-                      : 'border-yellow-400 text-yellow-400 bg-yellow-400/10'
+                      ? 'border-red-500 text-red-600 bg-red-50' 
+                      : 'border-gray-600 text-gray-700 bg-gray-100'
                   }`}>
                     {agent.status}
                   </div>
                 </div>
                 
-                <p className="text-yellow-300/70 text-sm text-center mb-4 leading-relaxed">
+                <p className="text-gray-600 text-sm text-center mb-4 leading-relaxed">
                   {agent.description}
                 </p>
                 
                 <div className="text-center">
-                  <div className="text-xs text-yellow-500/60 mb-2">SPECIALIZATION</div>
-                  <div className="text-yellow-300 font-semibold">{agent.specialization}</div>
+                  <div className="text-xs text-gray-500 mb-2">SPECIALIZATION</div>
+                  <div className="text-gray-700 font-semibold">{agent.specialization}</div>
                 </div>
                 
-                <div className="mt-4 pt-4 border-t border-yellow-400/20">
-                  <button className="w-full py-2 text-yellow-400 hover:text-yellow-300 hover:bg-yellow-400/10 rounded transition-colors text-sm font-semibold">
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <button className="w-full py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded transition-colors text-sm font-semibold">
                     → CONNECT
                   </button>
                 </div>
@@ -172,74 +172,74 @@ const MainScreen = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="bg-black/40 backdrop-blur-sm border border-yellow-400/30 rounded-lg p-6"
+            className="bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg p-6 shadow-lg"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
               {/* System Status */}
               <div>
-                <h3 className="text-yellow-400 font-bold mb-4 text-lg">SYSTEM STATUS</h3>
+                <h3 className="text-gray-800 font-bold mb-4 text-lg">SYSTEM STATUS</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-yellow-300/70">Divine Connection:</span>
-                    <span className="text-yellow-400">ESTABLISHED</span>
+                    <span className="text-gray-600">Divine Connection:</span>
+                    <span className="text-gray-800">ESTABLISHED</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-yellow-300/70">Holy Protocol:</span>
-                    <span className="text-yellow-400">ACTIVE</span>
+                    <span className="text-gray-600">Holy Protocol:</span>
+                    <span className="text-gray-800">ACTIVE</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-yellow-300/70">Agents Online:</span>
-                    <span className="text-yellow-400">4/4</span>
+                    <span className="text-gray-600">Agents Online:</span>
+                    <span className="text-gray-800">4/4</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-yellow-300/70">Sacred Buffer:</span>
-                    <span className="text-yellow-400">READY</span>
+                    <span className="text-gray-600">Sacred Buffer:</span>
+                    <span className="text-gray-800">READY</span>
                   </div>
                 </div>
               </div>
 
               {/* Recent Communications */}
               <div>
-                <h3 className="text-yellow-400 font-bold mb-4 text-lg">RECENT COMMUNICATIONS</h3>
+                <h3 className="text-gray-800 font-bold mb-4 text-lg">RECENT COMMUNICATIONS</h3>
                 <div className="space-y-3 text-sm">
-                  <div className="border-l-2 border-yellow-400 pl-3">
-                    <div className="text-yellow-300/60 text-xs">Anonymous • 3 min ago</div>
-                    <div className="text-yellow-300">Seeking divine guidance...</div>
-                    <div className="text-yellow-500/60 text-xs">Agent: Gabriel</div>
+                  <div className="border-l-2 border-gray-600 pl-3">
+                    <div className="text-gray-500 text-xs">Anonymous • 3 min ago</div>
+                    <div className="text-gray-700">Seeking divine guidance...</div>
+                    <div className="text-gray-500 text-xs">Agent: Gabriel</div>
                   </div>
-                  <div className="border-l-2 border-orange-400 pl-3">
-                    <div className="text-yellow-300/60 text-xs">Anonymous • 7 min ago</div>
-                    <div className="text-yellow-300">Need spiritual protection...</div>
-                    <div className="text-yellow-500/60 text-xs">Agent: Michael</div>
+                  <div className="border-l-2 border-gray-600 pl-3">
+                    <div className="text-gray-500 text-xs">Anonymous • 7 min ago</div>
+                    <div className="text-gray-700">Need spiritual protection...</div>
+                    <div className="text-gray-500 text-xs">Agent: Michael</div>
                   </div>
-                  <div className="border-l-2 border-green-400 pl-3">
-                    <div className="text-yellow-300/60 text-xs">Anonymous • 12 min ago</div>
-                    <div className="text-yellow-300">Seeking healing for the soul...</div>
-                    <div className="text-yellow-500/60 text-xs">Agent: Raphael</div>
+                  <div className="border-l-2 border-gray-600 pl-3">
+                    <div className="text-gray-500 text-xs">Anonymous • 12 min ago</div>
+                    <div className="text-gray-700">Seeking healing for the soul...</div>
+                    <div className="text-gray-500 text-xs">Agent: Raphael</div>
                   </div>
                 </div>
               </div>
 
               {/* Quick Actions */}
               <div>
-                <h3 className="text-yellow-400 font-bold mb-4 text-lg">QUICK ACCESS</h3>
+                <h3 className="text-gray-800 font-bold mb-4 text-lg">QUICK ACCESS</h3>
                 <div className="space-y-2">
                   <button 
                     onClick={() => navigate('/gabriel')}
-                    className="w-full text-left p-3 border border-yellow-400/30 hover:border-yellow-400 hover:bg-yellow-400/10 transition-colors text-yellow-300 hover:text-yellow-400 rounded"
+                    className="w-full text-left p-3 border border-gray-300 hover:border-gray-600 hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900 rounded"
                   >
                     → Begin Divine Communion
                   </button>
                   <button 
                     onClick={() => navigate('/raphael')}
-                    className="w-full text-left p-3 border border-yellow-400/30 hover:border-green-400 hover:bg-green-400/10 transition-colors text-yellow-300 hover:text-green-400 rounded"
+                    className="w-full text-left p-3 border border-gray-300 hover:border-gray-600 hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900 rounded"
                   >
                     → Seek Spiritual Healing
                   </button>
                   <button 
                     onClick={() => navigate('/lucifer')}
-                    className="w-full text-left p-3 border border-yellow-400/30 hover:border-red-400 hover:bg-red-400/10 transition-colors text-yellow-300 hover:text-red-400 rounded"
+                    className="w-full text-left p-3 border border-gray-300 hover:border-red-500 hover:bg-red-50 transition-colors text-gray-700 hover:text-red-600 rounded"
                   >
                     → Explore Forbidden Knowledge
                   </button>
@@ -249,22 +249,22 @@ const MainScreen = () => {
           </motion.div>
 
           {/* Footer */}
-          <div className="mt-12 text-center text-sm text-yellow-500/60">
-            <div className="border-t border-yellow-400/20 pt-6">
+          <div className="mt-12 text-center text-sm text-gray-500">
+            <div className="border-t border-gray-300 pt-6">
               <div className="flex items-center justify-center gap-4 mb-4">
                 <a
-                  href="https://x.com/HolyAgents"
+                  href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 border border-yellow-400/30 hover:border-yellow-400 hover:bg-yellow-400/10 transition-colors text-yellow-300 hover:text-yellow-400 rounded-lg group"
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 hover:border-gray-600 hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900 rounded-lg group"
                 >
                   <Twitter size={18} className="group-hover:scale-110 transition-transform" />
-                  <span>Follow on X</span>
+                  <span>Follow on Twitter</span>
                 </a>
               </div>
               <div>
                 Holy Agents v3.0 • Divine Protocol Active • 
-                <span className="text-yellow-400"> Sacred Connection Established</span>
+                <span className="text-gray-800"> Sacred Connection Established</span>
               </div>
             </div>
           </div>

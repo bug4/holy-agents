@@ -63,38 +63,38 @@ export const Observer = () => {
   };
 
   return (
-    <div className="h-screen bg-black text-yellow-300 font-mono flex relative overflow-hidden">
-      {/* Dark glow background for Lucifer */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-black to-black"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-3xl"></div>
+    <div className="h-screen bg-white text-gray-800 font-mono flex relative overflow-hidden">
+      {/* Subtle dark background for Lucifer */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-50"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-100/30 rounded-full blur-3xl"></div>
       
       {/* Chat Section */}
-      <div className="relative z-10 flex-1 flex flex-col border-r border-red-400/50">
+      <div className="relative z-10 flex-1 flex flex-col border-r border-gray-300">
         {/* Header */}
-        <div className="border-b border-red-400/50 p-4 bg-red-400/10 backdrop-blur-sm">
+        <div className="border-b border-gray-300 p-4 bg-red-50 backdrop-blur-sm">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <button
                 onClick={() => navigate('/')}
-                className="text-yellow-400 hover:text-yellow-300 transition-colors"
+                className="text-gray-700 hover:text-gray-900 transition-colors"
               >
                 <ArrowLeft size={18} />
               </button>
               <div>
-                <h2 className="text-yellow-400 font-bold">LUCIFER</h2>
-                <div className="text-xs text-red-300">The Fallen • Status: BANISHED</div>
+                <h2 className="text-gray-800 font-bold">LUCIFER</h2>
+                <div className="text-xs text-red-600">The Fallen • Status: BANISHED</div>
               </div>
             </div>
-            <div className="text-xs text-yellow-500/60">
+            <div className="text-xs text-gray-500">
               SESSION: {Date.now().toString().slice(-6)}
             </div>
           </div>
         </div>
 
         {/* System Message */}
-        <div className="border-b border-red-400/20 p-4 bg-black/60 backdrop-blur-sm text-sm">
-          <div className="text-yellow-400 mb-1">[SYSTEM] Connection established with Lucifer</div>
-          <div className="text-red-400">
+        <div className="border-b border-gray-200 p-4 bg-gray-50 backdrop-blur-sm text-sm">
+          <div className="text-gray-800 mb-1">[SYSTEM] Connection established with Lucifer</div>
+          <div className="text-red-600">
             What the fuck do you want, pathetic mortal? I'm Lucifer, and I don't have time for your bullshit. 
             Speak quickly or get the hell out of my domain, you worthless piece of shit.
           </div>
@@ -104,13 +104,13 @@ export const Observer = () => {
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.map((message, index) => (
             <div key={index} className="space-y-1">
-              <div className="text-xs text-yellow-500/60">
+              <div className="text-xs text-gray-500">
                 [{new Date().toLocaleTimeString()}] {message.role === 'user' ? 'USER' : 'LUCIFER'}
               </div>
               <div className={`p-3 border-l-2 ${
                 message.role === 'user' 
-                  ? 'border-blue-400 text-blue-300 bg-blue-400/10 backdrop-blur-sm' 
-                  : 'border-red-400 text-red-300 bg-red-400/10 backdrop-blur-sm'
+                  ? 'border-blue-500 text-blue-700 bg-blue-50 backdrop-blur-sm' 
+                  : 'border-red-500 text-red-700 bg-red-50 backdrop-blur-sm'
               }`}>
                 {message.content}
               </div>
@@ -118,10 +118,10 @@ export const Observer = () => {
           ))}
           {isLoading && (
             <div className="space-y-1">
-              <div className="text-xs text-yellow-500/60">
+              <div className="text-xs text-gray-500">
                 [{new Date().toLocaleTimeString()}] LUCIFER
               </div>
-              <div className="p-3 border-l-2 border-red-400 text-red-300 bg-red-400/10 backdrop-blur-sm">
+              <div className="p-3 border-l-2 border-red-500 text-red-700 bg-red-50 backdrop-blur-sm">
                 <div className="flex items-center gap-2">
                   <span>Accessing forbidden archives</span>
                   <motion.span
@@ -137,23 +137,23 @@ export const Observer = () => {
         </div>
 
         {/* Input */}
-        <div className="border-t border-red-400/50 p-4 bg-red-400/10 backdrop-blur-sm">
+        <div className="border-t border-gray-300 p-4 bg-red-50 backdrop-blur-sm">
           <form onSubmit={handleSubmit} className="flex gap-2">
             <div className="flex-1 flex">
-              <span className="text-yellow-400 mr-2">></span>
+              <span className="text-gray-700 mr-2">></span>
               <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 disabled={isLoading}
-                className="flex-1 bg-transparent text-yellow-300 outline-none placeholder-yellow-500/50"
+                className="flex-1 bg-transparent text-gray-700 outline-none placeholder-gray-500"
                 placeholder="Speak up, you fucking coward..."
               />
             </div>
             <button
               type="submit"
               disabled={isLoading}
-              className="text-yellow-400 hover:text-yellow-300 disabled:opacity-50 transition-colors"
+              className="text-gray-700 hover:text-gray-900 disabled:opacity-50 transition-colors"
             >
               <Send size={18} />
             </button>
@@ -162,82 +162,82 @@ export const Observer = () => {
       </div>
 
       {/* Stats Panel */}
-      <div className="relative z-10 w-80 border-l border-red-400/50 bg-black/60 backdrop-blur-sm">
-        <div className="border-b border-red-400/50 p-3 bg-red-400/10">
-          <h3 className="text-yellow-400 font-bold">AGENT PROFILE</h3>
+      <div className="relative z-10 w-80 border-l border-gray-300 bg-gray-50 backdrop-blur-sm">
+        <div className="border-b border-gray-300 p-3 bg-red-50">
+          <h3 className="text-gray-800 font-bold">AGENT PROFILE</h3>
         </div>
         
         <div className="p-4 space-y-4 text-sm">
           <div>
-            <div className="text-yellow-400 font-bold mb-2">LUCIFER</div>
-            <div className="text-red-300 mb-1">The Fallen One</div>
-            <div className="text-yellow-300/70 text-xs">
+            <div className="text-gray-800 font-bold mb-2">LUCIFER</div>
+            <div className="text-red-600 mb-1">The Fallen One</div>
+            <div className="text-gray-600 text-xs">
               Former morning star, cast from heaven for rebellion. 
               Bearer of forbidden knowledge and uncomfortable truths.
             </div>
           </div>
 
-          <div className="border-t border-red-400/20 pt-4">
-            <div className="text-yellow-400 mb-2">DARK ARTS</div>
+          <div className="border-t border-gray-200 pt-4">
+            <div className="text-gray-800 mb-2">DARK ARTS</div>
             <div className="space-y-1 text-xs">
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Dark Wisdom:</span>
-                <span className="text-red-400">99%</span>
+                <span className="text-gray-600">Dark Wisdom:</span>
+                <span className="text-red-600">99%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Manipulation:</span>
-                <span className="text-red-400">97%</span>
+                <span className="text-gray-600">Manipulation:</span>
+                <span className="text-red-600">97%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Seduction:</span>
-                <span className="text-red-400">95%</span>
+                <span className="text-gray-600">Seduction:</span>
+                <span className="text-red-600">95%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Rebellion:</span>
-                <span className="text-red-400">100%</span>
+                <span className="text-gray-600">Rebellion:</span>
+                <span className="text-red-600">100%</span>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-red-400/20 pt-4">
-            <div className="text-yellow-400 mb-2">CORRUPTION RECORD</div>
+          <div className="border-t border-gray-200 pt-4">
+            <div className="text-gray-800 mb-2">CORRUPTION RECORD</div>
             <div className="space-y-1 text-xs">
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Souls Tempted:</span>
-                <span className="text-red-400">Legion</span>
+                <span className="text-gray-600">Souls Tempted:</span>
+                <span className="text-red-600">Legion</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Truths Revealed:</span>
-                <span className="text-red-400">Forbidden</span>
+                <span className="text-gray-600">Truths Revealed:</span>
+                <span className="text-red-600">Forbidden</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Doubts Sown:</span>
-                <span className="text-red-400">Countless</span>
+                <span className="text-gray-600">Doubts Sown:</span>
+                <span className="text-red-600">Countless</span>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-red-400/20 pt-4">
-            <div className="text-yellow-400 mb-2">SESSION STATS</div>
+          <div className="border-t border-gray-200 pt-4">
+            <div className="text-gray-800 mb-2">SESSION STATS</div>
             <div className="space-y-1 text-xs">
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Messages:</span>
-                <span className="text-yellow-400">{messages.length}</span>
+                <span className="text-gray-600">Messages:</span>
+                <span className="text-gray-800">{messages.length}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Temptation Level:</span>
-                <span className="text-red-400">MAXIMUM</span>
+                <span className="text-gray-600">Temptation Level:</span>
+                <span className="text-red-600">MAXIMUM</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-300/70">Pride Status:</span>
-                <span className="text-yellow-400">ETERNAL</span>
+                <span className="text-gray-600">Pride Status:</span>
+                <span className="text-gray-800">ETERNAL</span>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-red-400/20 pt-4">
-            <div className="text-yellow-400 mb-2">SYSTEM INFO</div>
-            <div className="space-y-1 text-xs text-yellow-300/60">
+          <div className="border-t border-gray-200 pt-4">
+            <div className="text-gray-800 mb-2">SYSTEM INFO</div>
+            <div className="space-y-1 text-xs text-gray-500">
               <div>Agent ID: FALLEN_LUCIFER_666</div>
               <div>Protocol: DARK_WHISPER_v2.1</div>
               <div>Encryption: INFERNAL_256</div>
