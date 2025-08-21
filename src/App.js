@@ -253,7 +253,7 @@ const MainScreen = () => {
             <div className="border-t border-gray-300 pt-6">
               <div className="flex items-center justify-center gap-4 mb-4">
                 <a
-                  href="https://twitter.com"
+                  href="https://twitter.com/throneroomsol"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 border border-gray-300 hover:border-gray-600 hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900 rounded-lg group"
