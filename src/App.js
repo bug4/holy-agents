@@ -116,7 +116,7 @@ const MainScreen = () => {
               Divine communion through sacred technology
             </p>
             <div className="text-sm text-gray-500">
-              system://divine_interface/v3.0/heavenly_protocol
+              BbVq5Y4V3CpD2LZ7vMsdDKuUunwQG6kqf2BJ7eUSV777
             </div>
           </motion.div>
         </div>
